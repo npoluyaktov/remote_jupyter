@@ -15,8 +15,8 @@ if [[ ${v} == 'false' ]]; then
   ssh -i ${k} runner@172.17.0.1 'sudo docker container rm '$app
 fi
 
-ssh -i ${k} runner@172.17.0.1 'sudo docker image prune -a'
-ssh -i ${k} runner@172.17.0.1 'sudo docker builder prune'
+ssh -i ${k} runner@172.17.0.1 'sudo docker image prune -a -f'
+ssh -i ${k} runner@172.17.0.1 'sudo docker builder prune -a -f'
 
 ls -l
 ssh -i ${k} runner@172.17.0.1 'rm -r '$app'; mkdir '$app'; sudo chown runner '$app
