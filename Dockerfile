@@ -3,4 +3,4 @@ WORKDIR /app
 COPY . .
 RUN conda env create -f polyanka.yml
 RUN mkdir -p /opt/notebooks
-CMD conda run -n polyanka python sgd_classif.py
+CMD jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root
