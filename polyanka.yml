@@ -4,12 +4,4 @@ channels:
 dependencies:
   - python=3.9
   - numpy
-  - scipy
-  - pandas
-  - matplotlib=3.5.3
-  - seaborn
-  - memory_profiler
-  - jupyter
-  - statsmodels
-  - scikit-learn
 prefix: /Users/nikolay_poluyaktov/miniconda3/envs/polyanka
