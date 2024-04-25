@@ -3,6 +3,6 @@ WORKDIR /app
 COPY . .
 RUN conda install jupyter -y --quiet
 RUN conda env create -f polyanka.yml
-RUN conda activate polyanka
+SHELL ["conda", "run", "-n", "polyanka", "/bin/bash", "-c"]
 RUN mkdir -p /opt/notebooks
 CMD ["jupyter", "notebook", "--notebook-dir", "/opt/notebooks", "--ip", "*", "--port", "8888", "--no-browser", "--allow-root"]
