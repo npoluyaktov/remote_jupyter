@@ -4,4 +4,4 @@ COPY . .
 RUN conda install jupyter -y --quiet
 RUN conda env create -f polyanka.yml
 RUN mkdir -p /opt/notebooks
-CMD ["conda", "run", "--no-capture-output", "-n", "polyanka", "jupyter", "notebook", "--notebook-dir", "/opt/notebooks", "--port", "8888", "--no-browser", "--allow-root"]
+CMD ["conda", "run", "--no-capture-output", "-n", "polyanka", "jupyter", "notebook", "--notebook-dir", "/opt/notebooks", "ip", "*", "--port", "8888", "--no-browser", "--allow-root"]

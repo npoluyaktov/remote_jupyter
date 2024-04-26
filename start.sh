@@ -24,5 +24,5 @@ scp -i /home/gitlab-runner/id_rsa -r [!.]* runner@172.17.0.1:$app
 
 ssh -i ${k} runner@172.17.0.1 'cd '$app'; ls'
 ssh -i ${k} runner@172.17.0.1 'cd '$app'; sudo docker build -t '$app' .'
-f=$(ssh -tt -i ${k} runner@172.17.0.1 'echo "$( cd '$app'; sudo docker run -i -t -p 8888:8888 --name '$app' '$app' )"')
+f=$(ssh -tt -i ${k} runner@172.17.0.1 'echo "$( cd '$app'; sudo docker run -d -p 8888:8888 --name '$app' '$app' )"')
 echo ${f}
