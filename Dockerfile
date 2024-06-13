@@ -1,6 +1,8 @@
 FROM continuumio/miniconda3:latest
 WORKDIR /app
 COPY . .
+RUN cd /opt
+RUN git clone https://github.com/JohnLangford/vowpal_wabbit.git
 RUN conda env create -f polyanka.yml
 SHELL ["conda", "run", "-n", "polyanka", "/bin/bash", "-c"]
 RUN conda install jupyter -y --quiet

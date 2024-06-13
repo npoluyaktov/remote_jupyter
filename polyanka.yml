@@ -12,5 +12,4 @@ dependencies:
   - jupyter
   - statsmodels
   - scikit-learn
-  - vowpalwabbit
 prefix: /Users/nikolay_poluyaktov/miniconda3/envs/polyanka
