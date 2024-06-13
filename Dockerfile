@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . .
 RUN mkdir -p /opt/notebooks
 COPY data /opt/notebooks
-RUN git clone https://github.com/JohnLangford/vowpal_wabbit.git /opt
+RUN git clone https://github.com/JohnLangford/vowpal_wabbit.git /opt/vowpal_wabbit
 RUN conda env create -f polyanka.yml
 SHELL ["conda", "run", "-n", "polyanka", "/bin/bash", "-c"]
 RUN conda install -c anaconda boost
