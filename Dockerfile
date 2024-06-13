@@ -12,7 +12,7 @@ RUN export CPLUS_INCLUDE_PATH="/opt/conda/include"
 RUN conda install jupyter -y --quiet
 RUN mkdir -p /opt/notebooks
 COPY data /opt/notebooks
-RUN cd /opt
+RUN cd /opt/vowpal_wabbit
 RUN ls -l
 RUN cd /opt/vowpal_wabbit/python
 RUN python setup.py install
