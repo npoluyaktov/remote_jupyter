@@ -12,4 +12,6 @@ RUN export CPLUS_INCLUDE_PATH="/opt/conda/include"
 RUN conda install jupyter -y --quiet
 RUN mkdir -p /opt/notebooks
 COPY data /opt/notebooks
+RUN cd /opt/vowpal_wabbit/python
+RUN python setup.py install
 CMD ["conda", "run", "--no-capture-output", "-n", "polyanka", "jupyter", "notebook", "--notebook-dir", "/opt/notebooks", "--ip", "*", "--port", "8888", "--no-browser", "--allow-root"]
