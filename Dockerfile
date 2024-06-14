@@ -7,7 +7,7 @@ RUN git clone https://github.com/JohnLangford/vowpal_wabbit.git /opt/vowpal_wabb
 RUN conda env create -f polyanka.yml
 SHELL ["conda", "run", "-n", "polyanka", "/bin/bash", "-c"]
 RUN conda install -c anaconda cmake ninja rapidjson spdlog fmt boost zlib flatbuffers
-RUN conda install -c conda-forge gxx help2man
+RUN conda install -c conda-forge gxx help2man binutils
 RUN conda install jupyter -y --quiet
 WORKDIR /opt/vowpal_wabbit
 RUN git submodule update --init --recursive
@@ -19,4 +19,5 @@ RUN cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE:STRING="Release" \
     -DVW_GTEST_SYS_DEP:BOOL="ON" \
     -DVW_ZLIB_SYS_DEP:BOOL="ON" \
     -DBUILD_TESTING:BOOL="OFF"
+RUN cmake --build build
 CMD ["conda", "run", "--no-capture-output", "-n", "polyanka", "jupyter", "notebook", "--notebook-dir", "/opt/notebooks", "--ip", "*", "--port", "8888", "--no-browser", "--allow-root"]
