@@ -7,7 +7,7 @@ RUN git clone https://github.com/JohnLangford/vowpal_wabbit.git /opt/vowpal_wabb
 RUN conda env create -f polyanka.yml
 SHELL ["conda", "run", "-n", "polyanka", "/bin/bash", "-c"]
 RUN conda install -c anaconda cmake ninja rapidjson spdlog fmt boost zlib flatbuffers
-RUN conda install -c conda-forge gxx help2man binutils
+RUN conda install -c conda-forge gxx help2man binutils sysroot_linux-64=2.17
 RUN conda install jupyter -y --quiet
 WORKDIR /opt/vowpal_wabbit
 RUN git submodule update --init --recursive
