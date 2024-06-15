@@ -20,4 +20,5 @@ RUN cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE:STRING="Release" \
     -DVW_ZLIB_SYS_DEP:BOOL="ON" \
     -DBUILD_TESTING:BOOL="OFF"
 RUN cmake --build build
+RUN cmake --install build
 CMD ["conda", "run", "--no-capture-output", "-n", "polyanka", "jupyter", "notebook", "--notebook-dir", "/opt/notebooks", "--ip", "*", "--port", "8888", "--no-browser", "--allow-root"]
