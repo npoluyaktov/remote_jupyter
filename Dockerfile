@@ -11,14 +11,5 @@ RUN conda install -c conda-forge gxx help2man binutils sysroot_linux-64=2.17
 RUN conda install jupyter -y --quiet
 WORKDIR /opt/vowpal_wabbit
 RUN git submodule update --init --recursive
-RUN cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE:STRING="Release" \
-    -DFMT_SYS_DEP:BOOL="ON" \
-    -DRAPIDJSON_SYS_DEP:BOOL="ON" \
-    -DSPDLOG_SYS_DEP:BOOL="ON" \
-    -DVW_BOOST_MATH_SYS_DEP:BOOL="ON" \
-    -DVW_GTEST_SYS_DEP:BOOL="ON" \
-    -DVW_ZLIB_SYS_DEP:BOOL="ON" \
-    -DBUILD_TESTING:BOOL="OFF"
-RUN cmake --build build
-RUN cmake --install build
+RUN pip install -e /opt/vowpal_wabbit
 CMD ["conda", "run", "--no-capture-output", "-n", "polyanka", "jupyter", "notebook", "--notebook-dir", "/opt/notebooks", "--ip", "*", "--port", "8888", "--no-browser", "--allow-root"]
