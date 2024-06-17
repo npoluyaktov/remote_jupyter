@@ -3,14 +3,11 @@ WORKDIR /app
 COPY . .
 RUN mkdir -p /opt/notebooks
 COPY data /opt/notebooks
-RUN git clone https://github.com/JohnLangford/vowpal_wabbit.git /opt/vowpal_wabbit
 RUN conda env create -f polyanka.yml
 SHELL ["conda", "run", "-n", "polyanka", "/bin/bash", "-c"]
 RUN conda install -c anaconda cmake ninja rapidjson spdlog fmt boost zlib flatbuffers
 RUN conda install -c conda-forge gxx help2man binutils sysroot_linux-64=2.17
 RUN conda install jupyter -y --quiet
-WORKDIR /opt/vowpal_wabbit
-RUN git submodule update --init --recursive
 RUN echo $CONDA_PREFIX
-RUN pip install -e /opt/vowpal_wabbit
+RUN pip install vowpalwabbit
 CMD ["conda", "run", "--no-capture-output", "-n", "polyanka", "jupyter", "notebook", "--notebook-dir", "/opt/notebooks", "--ip", "*", "--port", "8888", "--no-browser", "--allow-root"]
