@@ -1,3 +1,3 @@
 # remote_jupyter
 
-test separate 2
+Jupyter notebook with miniconda kernel and vowpal wabbit
