@@ -11,5 +11,6 @@ RUN conda install -c conda-forge gxx help2man binutils sysroot_linux-64=2.17
 RUN conda install jupyter -y --quiet
 WORKDIR /opt/vowpal_wabbit
 RUN git submodule update --init --recursive
+RUN echo $CONDA_PREFIX
 RUN pip install -e /opt/vowpal_wabbit
 CMD ["conda", "run", "--no-capture-output", "-n", "polyanka", "jupyter", "notebook", "--notebook-dir", "/opt/notebooks", "--ip", "*", "--port", "8888", "--no-browser", "--allow-root"]
