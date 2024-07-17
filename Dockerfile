@@ -2,7 +2,7 @@ FROM continuumio/miniconda3:latest
 WORKDIR /app
 COPY . .
 RUN apt-get update
-RUN apt-get install texlive texlive-latex-extra texlive-fonts-recommended dvipng cm-super
+RUN apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended dvipng cm-super
 RUN mkdir -p /opt/notebooks
 COPY data /opt/notebooks
 RUN conda env create -f polyanka.yml
