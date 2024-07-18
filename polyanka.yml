@@ -1,6 +1,7 @@
 name: polyanka
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - python=3.9
   - numpy
@@ -12,4 +13,5 @@ dependencies:
   - jupyter
   - statsmodels
   - scikit-learn
+  - cvxopt
 prefix: /Users/nikolay_poluyaktov/miniconda3/envs/polyanka
