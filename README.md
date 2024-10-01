@@ -1,3 +1,3 @@
 # remote_jupyter
 
-Jupyter notebook with miniconda kernel and vowpal wabbit v4
+Jupyter notebook with miniconda kernel and vowpal wabbit v5
