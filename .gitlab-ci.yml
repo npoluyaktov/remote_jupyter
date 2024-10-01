@@ -1,0 +1,4 @@
+deploy:
+  stage: deploy
+  script:
+    - bash start.sh
