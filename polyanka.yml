@@ -18,4 +18,5 @@ dependencies:
   - jmespath
   - pyarrow
   - networkx
+  - graphviz
 prefix: /Users/nikolay_poluyaktov/miniconda3/envs/polyanka
