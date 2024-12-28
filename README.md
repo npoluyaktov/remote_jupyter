@@ -1,4 +1,4 @@
-# remote_jupyter
+# remote_jupyter 2
 
 В папке data события из 20 000 блоков ethereum.
 
