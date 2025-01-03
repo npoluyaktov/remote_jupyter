@@ -19,4 +19,5 @@ dependencies:
   - pyarrow
   - networkx
   - graphviz
+  - umap-learn
 prefix: /Users/nikolay_poluyaktov/miniconda3/envs/polyanka
