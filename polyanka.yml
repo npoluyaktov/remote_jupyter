@@ -21,4 +21,5 @@ dependencies:
   - graphviz
   - umap-learn
   - ecdsa
+  - web3
 prefix: /Users/nikolay_poluyaktov/miniconda3/envs/polyanka
