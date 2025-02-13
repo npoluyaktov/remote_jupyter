@@ -1,0 +1,27 @@
+name: polyanka
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib=3.5.3
+  - seaborn
+  - memory_profiler
+  - jupyter
+  - statsmodels
+  - scikit-learn
+  - cvxopt
+  - python-duckdb
+  - jmespath
+  - pyarrow
+  - networkx
+  - graphviz
+  - umap-learn
+  - ecdsa
+  - web3
+  - py-solc-x
+  - folium
+prefix: /Users/nikolay_poluyaktov/miniconda3/envs/polyanka
