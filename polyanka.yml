@@ -24,4 +24,5 @@ dependencies:
   - web3
   - py-solc-x
   - folium
+  - opencv
 prefix: /Users/nikolay_poluyaktov/miniconda3/envs/polyanka
