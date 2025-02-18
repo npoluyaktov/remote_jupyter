@@ -25,4 +25,5 @@ dependencies:
   - py-solc-x
   - folium
   - opencv
+  - nltk
 prefix: /Users/nikolay_poluyaktov/miniconda3/envs/polyanka
