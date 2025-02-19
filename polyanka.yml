@@ -26,7 +26,6 @@ dependencies:
   - opencv
   - nltk
   - geopandas
-  - h3-py
   - osmnx
   - shapely
 prefix: /Users/nikolay_poluyaktov/miniconda3/envs/polyanka
